@@ -3,17 +3,39 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Template HTML CSS JS</title>
+        <title>45 Vue cicli</title>
 
         <!-- CSS -->
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
         
-        <h1>
-            Template HTML CSS JS
-        </h1>
+        <div id="app">
+            <h1>
+                {{ message }}
+            </h1>
 
+            <ul>
+                <li v-for="(elem, index) in spesa">
+                    L'elemento {{ index }} è {{ elem }}
+                </li>
+            </ul>
+
+            <div>
+                <h3>
+                    Vuoi inserire l'elemento: {{ newElem }}
+                </h3>
+                <input type="text" v-model="newElem">
+
+                <div>
+                    <button @click="addToList()">
+                        Aggiungi in lista
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <script src="js/scripts.js" type="text/javascript"></script>
 
     </body>
